@@ -1,11 +1,11 @@
 package Videos
 
 type Videolist struct {
-	VideoList []Video
+	VideoList []Video `json:"VideoList"`
 }
 
 type Video struct {
-	Id        int
-	Name      string
-	Videopath string
+	Id        int    `json:"id"`
+	Name      string `json:"name"`
+	Videopath string `json:"category"`
 }

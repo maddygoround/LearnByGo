@@ -4,12 +4,11 @@ import (
 	"../../Config"
 	"../../Models/Videos"
 	"database/sql"
-	"encoding/json"
 	_ "github.com/denisenkom/go-mssqldb"
 	"log"
 )
 
-func GetAllVideos() ([]byte, error) {
+func GetAllVideos() *Videos.Videolist {
 
 	cObj := config.NewConfig()
 	db, err := sql.Open("mssql", cObj.ConnectionString)
@@ -53,6 +52,6 @@ func GetAllVideos() ([]byte, error) {
 		}
 	}
 
-	return json.Marshal(videolistObj)
+	return videolistObj
 
 }
