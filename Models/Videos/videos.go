@@ -5,7 +5,8 @@ type Videolist struct {
 }
 
 type Video struct {
-	Id        int    `json:"id"`
-	Name      string `json:"name"`
-	Videopath string `json:"category"`
+	VideoId      int    `json:"videoId"`
+	VideoName    string `json:"videoName"`
+	FileName     string `json:"fileName"`
+	IsProccessed bool   `json:"isProccessed"`
 }

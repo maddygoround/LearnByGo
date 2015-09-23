@@ -25,7 +25,7 @@ func GetAllVideos() *Videos.Videolist {
 
 	defer db.Close()
 
-	rows, err := db.Query("select * from Videos")
+	rows, err := db.Query("select * from Video")
 
 	if err != nil {
 		log.Fatal(err)
@@ -40,9 +40,10 @@ func GetAllVideos() *Videos.Videolist {
 	for rows.Next() {
 
 		err := rows.Scan(
-			&vidObj.Id,
-			&vidObj.Name,
-			&vidObj.Videopath,
+			&vidObj.VideoId,
+			&vidObj.VideoName,
+			&vidObj.FileName,
+			&vidObj.IsProccessed,
 		)
 
 		videolistObj.VideoList = append(videolistObj.VideoList, vidObj)
