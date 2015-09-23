@@ -2,10 +2,20 @@ package main
 
 import (
 	"./DBReader/VideoReader"
-	"os"
+	"encoding/json"
+	"github.com/gorilla/mux"
+	"net/http"
 )
 
 func main() {
-	vidObj, _ := Videoreader.GetAllVideos()
-	os.Stdout.Write(vidObj)
+	r := mux.NewRouter().StrictSlash(true)
+	r.HandleFunc("/videos", GetAllVideos)
+	http.ListenAndServe(":8000", r)
+}
+
+func GetAllVideos(w http.ResponseWriter, r *http.Request) {
+	videoObj := Videoreader.GetAllVideos()
+	w.Header().Set("Content-Type", "application/json")
+	w.Header().Set("Access-Control-Allow-Origin", "*")
+	json.NewEncoder(w).Encode(videoObj)
 }
