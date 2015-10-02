@@ -1,31 +1,13 @@
 package Videoreader
 
 import (
-	"../../Config"
+	"../../DBConnection"
 	"../../Models/Videos"
-	"database/sql"
-	_ "github.com/denisenkom/go-mssqldb"
 	"log"
 )
 
 func GetAllVideos() *Videos.Videolist {
-
-	cObj := config.NewConfig()
-	db, err := sql.Open("mssql", cObj.ConnectionString)
-
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	errPing := db.Ping()
-
-	if errPing != nil {
-		log.Fatal("Ping ", errPing)
-	}
-
-	defer db.Close()
-
-	rows, err := db.Query("select * from Video")
+	rows, err := SQLCtx.SQLdb.Query("select * from videos")
 
 	if err != nil {
 		log.Fatal(err)
@@ -41,9 +23,9 @@ func GetAllVideos() *Videos.Videolist {
 
 		err := rows.Scan(
 			&vidObj.VideoId,
+			&vidObj.VideoSize,
 			&vidObj.VideoName,
 			&vidObj.FileName,
-			&vidObj.IsProccessed,
 		)
 
 		videolistObj.VideoList = append(videolistObj.VideoList, vidObj)

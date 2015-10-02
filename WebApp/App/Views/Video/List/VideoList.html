@@ -1,0 +1,53 @@
+﻿
+<div class="row">
+    <div class="col-md-12">
+        <h4 class="page-title"> Videos </h4>
+        <div class="row">
+            <div class="col-md-12">
+                <table class="table table-bordered table-condensed table-responsive table-hover">
+                    <thead>
+                        <tr>
+                            <th>
+                               Video ID
+                            </th>
+                            <th>
+                                Name
+                            </th>
+                            <th>
+                                Size
+                            </th>
+                            <!--<th>
+                                File Name
+                            </th>-->
+                            <th width="90px;">
+                                Play Video
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="video in videoList">
+                            <td>
+                                {{::video.videoId}}
+                            </td>
+                            <td>
+                                {{::video.videoName}}
+                            </td>
+                            <td>
+                                {{::((video.videoSize/1024)/1024) | number:2}} MB
+                            </td>
+                            <!--<td>
+                                {{::video.fileName}}
+                            </td>-->
+                            <td>
+                                <a class=" btn btn-primary btn-xs"  ng-click="playVideo(video)"> <i class="fa fa-play-circle-o"></i> Play</a>
+                            </td>
+                        </tr>
+                       
+                    </tbody>
+                </table>
+
+            </div>
+           
+        </div>
+    </div>
+</div>
