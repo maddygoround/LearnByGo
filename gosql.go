@@ -19,7 +19,7 @@ func main() {
 	r.HandleFunc("/videos", GetAllVideos)
 	r.PathPrefix("/").Handler(http.FileServer(http.Dir("./WebApp/")))
 	http.Handle("/", r)
-	fmt.Println("server started on : 8080", http.ListenAndServe(":8000", nil))
+	//fmt.Println("server started on : 8080", http.ListenAndServe(":8000", nil))
 }
 
 func GetAllVideos(w http.ResponseWriter, r *http.Request) {
