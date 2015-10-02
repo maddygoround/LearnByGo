@@ -17,7 +17,7 @@ type DBParams struct {
 
 func NewDBParams() *DBParams {
 	if ObjDBParams == nil {
-		ObjDBParams = &DBParams{"172.16.1.5", "imedia", "imedia2006", "1433", "GoLearn"}
+		ObjDBParams = &DBParams{"SERVER", "USERNAME", "PASSWORD", "PORT", "DATABASE"}
 	}
 	return ObjDBParams
 }

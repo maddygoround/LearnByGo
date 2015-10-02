@@ -9,7 +9,7 @@ import (
 var SQLdb *sql.DB
 
 func InitDB() {
-	SQLdb, _ = sql.Open("mysql", "root:root123@tcp(172.16.1.201:3306)/gotest") //sql.Open("mssql", cObj.ConnectionString)
+	SQLdb, _ = sql.Open("mysql", "YOUR_DATABASE_STRING")
 	err := SQLdb.Ping()
 	if err != nil {
 		fmt.Println("Connection Failed")
