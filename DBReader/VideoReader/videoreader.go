@@ -1,13 +1,13 @@
 package Videoreader
 
 import (
-	"../../DBConnection"
-	"../../Models/Videos"
+	"../../dbconnection"
+	"../../models/videos"
 	"log"
 )
 
 func GetAllVideos() *Videos.Videolist {
-	rows, err := SQLCtx.SQLdb.Query("select * from videos")
+	rows, err := SQLCtx.SQLdb.Query("select id,videosize,name,filename from go_videos")
 
 	if err != nil {
 		log.Fatal(err)

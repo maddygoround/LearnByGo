@@ -1,0 +1,16 @@
+<component name="libraryTable">
+  <library name="gen">
+    <CLASSES />
+    <JAVADOC />
+    <SOURCES>
+      <root url="file://D:/golangPlugnis/go-lang-idea-plugin/gen" />
+      <root url="file://D:/golangPlugnis/go-lang-idea-plugin/google-app-engine/google-app-engine-yaml/src" />
+      <root url="file://D:/golangPlugnis/go-lang-idea-plugin/google-app-engine/src" />
+      <root url="file://D:/golangPlugnis/go-lang-idea-plugin/jps-plugin/src" />
+      <root url="file://D:/golangPlugnis/go-lang-idea-plugin/jps-plugin/tests" />
+      <root url="file://D:/golangPlugnis/go-lang-idea-plugin/src" />
+      <root url="file://D:/golangPlugnis/go-lang-idea-plugin/tests" />
+      <root url="file://D:/golangPlugnis/go-lang-idea-plugin/utils/src" />
+    </SOURCES>
+  </library>
+</component>
