@@ -1,2 +1,2 @@
-# LearnByGo https://travis-ci.org/maddygoround/LearnByGo.svg
+# LearnByGo 
 Learning Go by examples 
